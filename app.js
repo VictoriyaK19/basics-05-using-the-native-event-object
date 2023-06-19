@@ -5,8 +5,17 @@ const app = Vue.createApp({
       name: ''
     };
   },
+  computed: {
+    fullname() {
+      console.log('Running again');
+      if (this.name === '') {
+        return '';
+      }
+      return this.name + ' ' + 'Kalinova';
+    }
+  },
   methods: {
-    setName(event, lastName) {
+    setName(event) {
       this.name = event.target.value;
     },
     add(num) {
